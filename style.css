@@ -4,7 +4,7 @@ body{
     
 }
 section{
-   
+    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 177, 177));
     width: 500px;
     height: auto;
     margin-left:auto;
