@@ -4,13 +4,12 @@ body{
     
 }
 section{
-   
+    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 177, 177));
     width: 500px;
     height: auto;
     margin-left:auto;
     margin-right:auto;
     border-radius: 30px;
-    background: linear-gradient(to bottom right, rgb(255, 255, 255), rgb(255, 177, 177));
 }
 
 p{
