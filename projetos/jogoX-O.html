@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JOGO DA VELHA</title>
+</head>
+<style>
+    body{
+    background-color: rgb(218, 114, 83);
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+     height: auto;
+     margin-left: auto; 
+     margin-right: auto;
+       
+    }
+    section{
+     background-color: black;
+     width: 167px;
+     height: 230px;
+     margin-left: auto; 
+     margin-right: auto;
+     margin-top: 120px;
+    }
+    
+    button{
+       border: none;
+       width: 50px;
+       height: 50px;
+    
+      
+    }
+    #jogador{
+        color: azure;
+        width: 165px;
+        height: 20px;
+        text-align: center;
+    }
+
+   #play{
+    width: 100px;
+    height: auto;
+   }
+   header{
+    margin-left: 43%; 
+     margin-right: auto;
+   }
+   footer{
+    margin-left: 43%; 
+     margin-right: auto;
+   }
+</style>
+<body>
+   <header>
+    <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X <br>
+    <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O <br>
+   
+   </header>
+    <section>
+       <h1 style="font-size: 10px; color: white; text-align: center; margin-top: 20px;">JOGO DA VELHA</h1>
+       <div id="play">
+        <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;" id="troca"></button>
+        <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;" id="mudar"></button>
+    </div>
+        <div id="jogador"></div>
+    <table>
+        <tr>
+            <td>
+            <button id="b1">.</button>
+            <button id="b2">.</button>
+            <button id="b3">.</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="b4">.</button>
+                <button id="b5">.</button>
+                <button id="b6">.</button>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <button id="b7">.</button>
+                <button id="b8">.</button>
+                <button id="b9">.</button>
+            </td>
+        </tr>
+    </table>
+    </section>
+    <footer>
+        <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
+     </footer>
+</body>
+<script>
+
+const botoes = document.querySelectorAll("button")    
+const jogador = document.getElementById('jogador')
+const troca = document.getElementById('troca')
+const mudar = document.getElementById('mudar')
+
+troca.addEventListener('click',function(){
+jogador.innerHTML = 'player1'
+//o parametro dentro do forEach que possibilita o codigo funcionar
+botoes.forEach( b => {
+	b.addEventListener("click", () => {
+        b.innerHTML = 'X'
+       
+	})
+})
+})
+
+mudar.addEventListener('click',function(){
+jogador.innerHTML = 'player2'
+//o parametro dentro do forEach que possibilita o codigo funcionar
+botoes.forEach( b => {
+	b.addEventListener("click", () => {
+        b.innerHTML = 'O' 
+       
+	})
+})
+})
+
+
+
+
+
+</script>
+</html>
