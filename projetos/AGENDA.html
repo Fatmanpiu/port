@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENDA</title>
+    <style>
+body{
+    background-color: rgb(169, 145, 197);
+}
+section{
+    
+    background-color: rgb(9, 9, 65);
+    width: 250px;
+    height: 350px;
+    color: aliceblue;
+    margin-left:auto;
+    margin-right:auto;
+    overflow: auto;
+    overflow-x: hidden;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+::-webkit-scrollbar {
+  width: 2px;
+  background-color: azure;
+}
+
+#eai{
+    
+   text-align: center;
+    color: aliceblue; 
+    
+}
+#txt{
+    background-color: rgb(9, 9, 65);
+    width: 242px;
+    color: aliceblue;
+}
+
+#texto{
+    background-color: rgb(9, 9, 65);
+    width: auto;
+    color: aliceblue;
+    border: 2px solid black;
+}
+button{
+    background-color: rgb(9, 9, 65);
+    color: aliceblue;
+   
+} 
+footer{
+    text-align: center; 
+    margin-left:auto;
+    margin-right:auto;  
+}
+
+
+    </style>
+</head>
+<body>
+  <section>
+   <h1 id="eai">AGENDA</h1>
+    <input id="txt" type="text">
+    <br>
+    <button id="bot" onclick="enviar()">ok</button>
+    <button id="apagar">apagar</button>
+ <div id="res"> 
+ </div>
+ </section>
+ <footer>
+    <p> você pode voltar<a href="../portfolio.html" rel="prev">clicando aqui</a></p>
+ </footer>
+ 
+ <!--<button id="botao">aperta aqui</button>-->
+</body>
+<script>
+var res = document.getElementById('res')   
+ var bot = document.getElementById("bot")
+ var txt = document.getElementById("txt")
+ var apagar = document.getElementById('apagar')
+
+
+ function enviar(){
+    var valor = txt.value
+    var paragrafo = document.createElement("p") 
+    paragrafo.innerHTML = `${valor}`
+    paragrafo.setAttribute('id', 'texto') 
+    document.getElementById("res").appendChild(paragrafo)
+    txt.value = ''
+   
+ }       
+ apagar.addEventListener('click', function() {
+  var paragrafos = res.querySelectorAll('p');
+  if (paragrafos.length > 0) {
+    res.removeChild(paragrafos[paragrafos.length - 1]);
+  }
+})
+
+
+
+txt.addEventListener("keypress", function() {
+    if (event.keyCode === 13 || event.which === 13) {
+        bot.click()
+      
+    }
+   
+  })
+
+  document.addEventListener("keydown", verificarTecla)
+     function verificarTecla(evento) {
+            if (evento.keyCode === 46) {
+                apagar.click()
+            }
+           
+        }
+
+
+
+</script>
+</html>
