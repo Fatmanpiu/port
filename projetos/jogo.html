@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JOGO DA VELHA</title>
 </head>
+
 <style>
+
+  
+
     body{
-    background-color: rgb(218, 114, 83);
+
+    background-color: rgb(255, 255, 255);
     font-family: Arial, Helvetica, sans-serif;
     width: auto;
      height: auto;
@@ -17,114 +22,137 @@
        
     }
     section{
-     background-color: black;
      width: 167px;
-     height: 230px;
-     margin-left: auto; 
+     height: 250px;
+     margin-left: 45%; 
      margin-right: auto;
-     margin-top: 120px;
+     margin-top: 3%;
     }
-    
+    td{
+        background-color: #000;
+    }
+
     button{
+        background-color: white;
        border: none;
        width: 50px;
        height: 50px;
-    
+       
       
     }
     #jogador{
-        color: azure;
+        color: rgb(0, 0, 0);
         width: 165px;
         height: 20px;
         text-align: center;
     }
 
-   #play{
-    width: 100px;
-    height: auto;
-   }
    header{
     margin-left: 43%; 
      margin-right: auto;
    }
+   
    footer{
     margin-left: 43%; 
      margin-right: auto;
    }
+ 
 </style>
 <body>
    <header>
-    <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X <br>
-    <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O <br>
-   
+    <button onclick="atualizarPagina()" style="background-color: rgb(0, 255, 13);width: 200px; height: 35px;margin-left: auto;margin-right: auto; border: 3px solid black;">
+        <strong>PRÓXIMA <br>
+             PARTIDA</strong></button>
+    <br>
+    <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X 
+    <br>
+    <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O 
+    <br>
+    <button  style="background-color: rgb(46, 2, 97);width: 200px; height: 50px; border: 2px solid black; margin-left: 3px;color: #000; margin-top: 15px;font-size: 20px;" id="players">aperte aqui para <br>
+        começar</button>
+    <br>
+    
    </header>
+  
+   
+
     <section>
-       <h1 style="font-size: 10px; color: white; text-align: center; margin-top: 20px;">JOGO DA VELHA</h1>
-       <div id="play">
-        <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;" id="troca">X</button>
-        <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;" id="mudar">O</button>
-    </div>
-        <div id="jogador"></div>
+       <h1 style="font-size: 20px; color: rgb(0, 0, 0); text-align: center;">JOGO DA VELHA</h1>
+        <div id="jogador" style="font-size: 30px;"></div>
+        <br>
     <table id="geral">
         <tr>
-            <td>
-            <button id="b1">.</button>
-            <button id="b2">.</button>
-            <button id="b3">.</button>
-            </td>
+          
+            <td><button style="font-size: 30px; color: white;" id="bt1">.</button></td>
+            <td><button style="font-size: 30px;color: white;" id="bt2">.</button></td>
+            <td><button style="font-size: 30px;color: white;"id="bt3">.</button></td>
+            
         </tr>
         <tr>
-            <td>
-                <button id="b4">.</button>
-                <button id="b5">.</button>
-                <button id="b6">.</button>
-            </td>
+         
+                <td><button style="font-size: 30px;color: white;" id="bt4">.</button></td>
+                <td><button style="font-size: 30px;color: white;" id="bt5">.</button></td>
+                <td><button style="font-size: 30px;color: white;" id="bt6">.</button></td>
+           
         </tr>
         <tr>
-            <td>
-                <button id="b7">.</button>
-                <button id="b8">.</button>
-                <button id="b9">.</button>
-            </td>
+          
+                <td><button style="font-size: 30px;color: white;" id="bt7">.</button></td>
+                <td><button style="font-size: 30px;color: white;" id="bt8">.</button></td>
+                <td><button style="font-size: 30px;color: white;" id="bt9">.</button></td>
+           
         </tr>
     </table>
     </section>
     <footer>
+      
         <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
      </footer>
 </body>
 <script>
-
+const bt1 = document.getElementById('bt1')
+const bt2 = document.getElementById('bt2')
+const bt3 = document.getElementById('bt3')
+const bt4 = document.getElementById('bt4')
+const bt5 = document.getElementById('bt5')
+const bt6 = document.getElementById('bt6')
+const bt7 = document.getElementById('bt7')
+const bt8 = document.getElementById('bt8')
+const bt9 = document.getElementById('bt9')
+//faz com que todos os buttons na tabela funcionem
 const botoes = document.querySelectorAll("#geral button")    
 const jogador = document.getElementById('jogador')
 const troca = document.getElementById('troca')
 const mudar = document.getElementById('mudar')
 
-troca.addEventListener('click',function(){
+function atualizarPagina() {
+  location.reload();
+}
+
+
+players.addEventListener('click',function(){
 jogador.innerHTML = 'player1'
 //o parametro dentro do forEach que possibilita o codigo funcionar
 botoes.forEach( b => {
 	b.addEventListener("click", () => {
+     if (jogador.innerHTML === 'player1') {
         b.innerHTML = 'X'
-       
+      jogador.innerHTML = 'player2' 
+    document.getElementById('players').style.backgroundColor = "red"
+    document.getElementById('players').innerHTML = 'O' 
+     }else{
+        b.innerHTML = 'O'
+        jogador.innerHTML = 'player1'
+    document.getElementById('players').style.backgroundColor = "blue"
+    document.getElementById('players').innerHTML = 'X'
+    players.disabled = true; 
+     }
+      b.style.color = "black"
+
+
 	})
 })
 })
-
-mudar.addEventListener('click',function(){
-jogador.innerHTML = 'player2'
-//o parametro dentro do forEach que possibilita o codigo funcionar
-botoes.forEach( b => {
-	b.addEventListener("click", () => {
-        b.innerHTML = 'O' 
-       
-	})
-})
-})
-
-
-
-
 
 </script>
 </html>
