@@ -59,16 +59,16 @@
  
 </style>
 <body>
-   <header>
-    <button onclick="atualizarPagina()" style="background-color: rgb(0, 255, 13);width: 200px; height: 35px;margin-left: auto;margin-right: auto; border: 3px solid black;">
+   <header i>
+    <button onclick="atualizarPagina()" style="background-color: rgb(188, 207, 189);width: 200px; height: 35px;margin-left: auto;margin-right: auto; border: 3px solid black;">
         <strong>PRÓXIMA <br>
              PARTIDA</strong></button>
     <br>
-    <button style="background-color: blue;width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X 
+    <button style="background-color: rgb(98, 98, 197);width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X 
     <br>
-    <button style="background-color: red;width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O 
+    <button style="background-color: rgb(211, 109, 109);width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O 
     <br>
-    <button  style="background-color: rgb(46, 2, 97);width: 200px; height: 50px; border: 2px solid black; margin-left: 3px;color: #000; margin-top: 15px;font-size: 20px;" id="players">aperte aqui para <br>
+    <button  style="background-color: rgb(152, 110, 190);width: 200px; height: 50px; border: 2px solid black; margin-left: 3px;color: #000; margin-top: 15px;font-size: 20px;" id="players">aperte aqui para <br>
         começar</button>
     <br>
     
@@ -125,10 +125,20 @@ const jogador = document.getElementById('jogador')
 const troca = document.getElementById('troca')
 const mudar = document.getElementById('mudar')
 
+/*const combinacoes = [
+		[bt1, bt2, bt3],
+		[bt4, bt5, bt6],
+		[bt7, bt8, bt9],
+		[bt1, bt4, bt7],
+		[bt2, bt5, bt8],
+		[bt3, bt6, bt9],
+		[bt1, bt5, bt9],
+		[bt3, bt5, bt7]
+			]*/
+
 function atualizarPagina() {
   location.reload();
 }
-
 
 players.addEventListener('click',function(){
 jogador.innerHTML = 'player1'
@@ -138,12 +148,13 @@ botoes.forEach( b => {
      if (jogador.innerHTML === 'player1') {
         b.innerHTML = 'X'
       jogador.innerHTML = 'player2' 
-    document.getElementById('players').style.backgroundColor = "red"
-    document.getElementById('players').innerHTML = 'O' 
+    document.getElementById('players').style.backgroundColor = "rgb(211, 109, 109)"
+    document.getElementById('players').innerHTML = 'O'
+
      }else{
         b.innerHTML = 'O'
         jogador.innerHTML = 'player1'
-    document.getElementById('players').style.backgroundColor = "blue"
+    document.getElementById('players').style.backgroundColor = "rgb(98, 98, 197)"
     document.getElementById('players').innerHTML = 'X'
     players.disabled = true; 
      }
