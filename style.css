@@ -2,10 +2,10 @@
 body{
     background-image: linear-gradient(to top, blue, red );
     font-family: Arial, Helvetica, sans-serif;
-    
+    color: rgb(0, 0, 0);
 }
-section{
-    background-color: rgba(255, 255, 255, 0.274);
+main{
+    background-color: rgba(255, 255, 255, 0.514);
     background-attachment: fixed;
     width: 500px;
     height: auto;
@@ -13,9 +13,10 @@ section{
     margin-right:auto;
     border-radius: 3px;
     text-align: justify;
+
     
 }
-  a{
+a{
     color: rgb(0, 0, 0);
 }
 p{
