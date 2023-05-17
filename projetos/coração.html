@@ -12,16 +12,28 @@ font-family: Arial, Helvetica, sans-serif;
 text-align: center;
 
     }
-#nao,#sim {
+#nao {
 position: absolute;
 top: 300px;
-left: 46%;
+left: 51%;
 background: rgb(245, 212, 212);
 border-radius: 10px;
 width: 100px;
 height: 50px;
 box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.808);
 font-size: 30px;
+}
+#sim{
+    position: absolute;
+top: 300px;
+left: 51%;
+margin: 0 -120px;
+background: rgb(245, 212, 212);
+border-radius: 10px;
+width: 100px;
+height: 50px;
+box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.808);
+font-size: 30px;      
 }
 
 section{
@@ -30,8 +42,7 @@ background: rgb(187, 123, 123);
 border-radius: 10px;
 height: 500px;
 width: 500px;
-margin-left:auto;
-margin-right:auto;
+margin: auto;
 
 
 }
@@ -82,7 +93,7 @@ font-size: 20px;
    
     </section> 
     <footer style="font-size: 25px;">
-    <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
+    <p> você pode voltar<a href="../portfolio.html" rel="prev">clicando aqui</a></p>
 </footer>
 </body>
 <script>
@@ -91,7 +102,7 @@ font-size: 20px;
     var nop = document.getElementById('nop')
     const tela = document.getElementById('tela')
     //var nome = prompt('qual seu nome?')
-    sim.style.display = 'none'
+   
 
     nao.addEventListener('mouseover', function() {
     var newTop = Math.floor(Math.random() * window.innerHeight);
@@ -99,8 +110,7 @@ font-size: 20px;
     nao.style.top = newTop + 'px';
     nao.style.left = newLeft + 'px';
    
-    setTimeout(function(){
-    sim.style.display = 'block'},250)
+   
 
 })
 
