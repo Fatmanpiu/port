@@ -6,6 +6,7 @@ body{
 }
 section{
     background-color: rgba(255, 255, 255, 0.274);
+    background-attachment: fixed;
     width: 500px;
     height: auto;
     margin-left:auto;
