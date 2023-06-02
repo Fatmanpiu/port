@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+            body{
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    width: auto;
+     height: auto;
+     margin-left: auto; 
+     margin-right: auto;
+    }
+    section{
+     width: 160px;
+     height: 380px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    button{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    }
+    #delet{
+    width: 160px;  
+    }
+    #res{
+    width: 152px; 
+    font-size: 20px;   
+    }
+   #igual{
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+   }
+    </style>
+</head>
+<body>
+<main>
+    <section>
+        <input type="text" id="res" readonly>
+        <br>
+        <button id="delet">DELETE</button>
+        <div id="corpo">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <br>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <br>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <br>
+        <button>0</button>
+        <button id="mult">*</button>
+        <button id="sub">-</button>
+        <br>
+        <button id="soma">+</button>
+        <button id="divi">/</button>
+        <input type="button" value="=" id="igual">
+        </div>
+        
+    </section>
+</main>
+</body>
+<script>
+const delet = document.getElementById('delet')
+const res = document.getElementById('res')
+const b = document.querySelectorAll('#corpo button')
+//button apaga as msg no input
+delet.addEventListener('click', function() {
+res.value = ''
+})
+//percorre todos os button e imprime no input o textContent que está no button
+b.forEach(function(botao){
+botao.addEventListener('click', function(){
+let num = botao.textContent
+if (res.value === 'DIGITE.......') {
+res.value = ''
+} 
+res.value += num    
+}) 
+//usa o eval para calcular os numeros conforme inscrito no input
+document.getElementById('igual').addEventListener('click', function() {
+if (res.value === '') {
+res.value ='DIGITE.......'
+} 
+let resultado = eval(res.value)
+res.value = resultado   
+  })
+})
+   
+</script>
+</html>
