@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AGENDA</title>
+    <title>NOTAS</title>
     <style>
 body{
-    background-color: rgb(169, 145, 197);
+    background-color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
 }
 section{
     
-    background-color: rgb(9, 9, 65);
+    background-color: rgb(20, 20, 43);
     width: 250px;
     height: 350px;
     color: aliceblue;
@@ -30,25 +31,27 @@ section{
 #eai{
     
    text-align: center;
-    color: aliceblue; 
+    color: rgb(255, 255, 255); 
     
 }
 #txt{
-    background-color: rgb(9, 9, 65);
+    background-color: rgb(20, 20, 43);
     width: 242px;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
 }
 
 #texto{
-    background-color: rgb(9, 9, 65);
+    background-color: rgb(20, 20, 43);
     width: auto;
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     border: 2px solid black;
 }
 button{
-    background-color: rgb(9, 9, 65);
+    background-color:  rgb(20, 20, 43);
+    width: 120px;
+    height: 20px;
     color: aliceblue;
-   
+   font-size: 14px;
 } 
 footer{
     text-align: center; 
@@ -61,8 +64,8 @@ footer{
 </head>
 <body>
   <section>
-   <h1 id="eai">AGENDA</h1>
-    <input id="txt" type="text">
+   <h1 id="eai">NOTAS</h1>
+    <input id="txt" type="text" value="Escreva algo aqui...." >
     <br>
     <button id="bot" onclick="enviar()">ok</button>
     <button id="apagar">apagar</button>
@@ -81,8 +84,9 @@ var res = document.getElementById('res')
  var txt = document.getElementById("txt")
  var apagar = document.getElementById('apagar')
 
-
+ //cria um novo paragrafo com o valor escrito no input ao executar essa função
  function enviar(){
+   
     var valor = txt.value
     var paragrafo = document.createElement("p") 
     paragrafo.innerHTML = `${valor}`
@@ -90,7 +94,8 @@ var res = document.getElementById('res')
     document.getElementById("res").appendChild(paragrafo)
     txt.value = ''
    
- }       
+ } 
+ //apaga o ultimo paragrafo da div       
  apagar.addEventListener('click', function() {
   var paragrafos = res.querySelectorAll('p');
   if (paragrafos.length > 0) {
@@ -107,16 +112,6 @@ txt.addEventListener("keypress", function() {
     }
    
   })
-
-  document.addEventListener("keydown", verificarTecla)
-     function verificarTecla(evento) {
-            if (evento.keyCode === 46) {
-                apagar.click()
-            }
-           
-        }
-
-
 
 </script>
 </html>
