@@ -4,167 +4,117 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JOGO DA VELHA</title>
+    <title>new jogo</title>
 </head>
-
 <style>
-
-  
-
     body{
-
-    background-color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
-    width: auto;
-     height: auto;
-     margin-left: auto; 
-     margin-right: auto;
-       
+        font-family: Arial, Helvetica, sans-serif;
     }
-    section{
-     width: 167px;
-     height: 250px;
-     margin-left: 45%; 
-     margin-right: auto;
-     margin-top: 3%;
-    }
-    td{
-        background-color: #000;
-    }
-
-    button{
-        background-color: white;
-       border: none;
-       width: 50px;
-       height: 50px;
-       
-      
-    }
-    #jogador{
-        color: rgb(0, 0, 0);
-        width: 165px;
-        height: 20px;
-        text-align: center;
-    }
-
-   header{
-    margin-left: 43%; 
-     margin-right: auto;
-   }
-   
-   footer{
-    margin-left: 43%; 
-     margin-right: auto;
-   }
  
+    section{
+    width: 167px;
+    height: auto;
+    margin-top: 10%;    
+    margin-left: auto; 
+    margin-right: auto;
+    font-size: 12px;
+    }
+    button{
+        width: 50px; 
+        height: 50px;
+        color: white;
+        background-color: white;
+        font-size: 30px; 
+         
+    }
+    #res{
+        width: 156px; 
+        height: 50px;
+        font-size: 30px; 
+       
+       
+    }
+    h1{
+        color: #000000;
+    }
+    #novo{
+        border: none;
+    }
+    footer{
+    margin-left: 43%; 
+     margin-right: auto;
+   }
 </style>
 <body>
-   <header i>
-    <button onclick="atualizarPagina()" style="background-color: rgb(188, 207, 189);width: 200px; height: 35px;margin-left: auto;margin-right: auto; border: 3px solid black;">
-        <strong>PRÓXIMA <br>
-             PARTIDA</strong></button>
-    <br>
-    <button style="background-color: rgb(98, 98, 197);width: 30px; height: 20px; border: 2px solid black;">X</button> Player1 joga com o X 
-    <br>
-    <button style="background-color: rgb(211, 109, 109);width: 30px; height: 20px; border: 2px solid black;">O</button> Player2 joga com o O 
-    <br>
-    <button  style="background-color: rgb(152, 110, 190);width: 200px; height: 50px; border: 2px solid black; margin-left: 3px;color: #000; margin-top: 15px;font-size: 20px;" id="players">aperte aqui para <br>
-        começar</button>
-    <br>
+<main>
+    <section id="corpo">
+        <button id="novo" onclick="resetGame()">&#x1F503;</button>
+        <h1 id="ve">JOGO DA VELHA</h1>
+        <input type="button" value="X" id="res">
     
-   </header>
-  
-   
-
-    <section>
-       <h1 style="font-size: 20px; color: rgb(0, 0, 0); text-align: center;">JOGO DA VELHA</h1>
-        <div id="jogador" style="font-size: 30px;"></div>
-        <br>
-    <table id="geral">
-        <tr>
-          
-            <td><button style="font-size: 30px; color: white;" id="bt1">.</button></td>
-            <td><button style="font-size: 30px;color: white;" id="bt2">.</button></td>
-            <td><button style="font-size: 30px;color: white;"id="bt3">.</button></td>
-            
-        </tr>
-        <tr>
-         
-                <td><button style="font-size: 30px;color: white;" id="bt4">.</button></td>
-                <td><button style="font-size: 30px;color: white;" id="bt5">.</button></td>
-                <td><button style="font-size: 30px;color: white;" id="bt6">.</button></td>
-           
-        </tr>
-        <tr>
-          
-                <td><button style="font-size: 30px;color: white;" id="bt7">.</button></td>
-                <td><button style="font-size: 30px;color: white;" id="bt8">.</button></td>
-                <td><button style="font-size: 30px;color: white;" id="bt9">.</button></td>
-           
-        </tr>
-    </table>
-    </section>
-    <footer>
+    <br>
+     <button>.</button>
+     <button>.</button>
+     <button>.</button>
+     <br>
+     <button>.</button>
+     <button>.</button>
+     <button>.</button>
+     <br>
+     <button>.</button>
+     <button>.</button>
+     <button>.</button>
+     </section>
+</main>
+<footer>
       
-        <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
-     </footer>
-</body>
-<script>
-const bt1 = document.getElementById('bt1')
-const bt2 = document.getElementById('bt2')
-const bt3 = document.getElementById('bt3')
-const bt4 = document.getElementById('bt4')
-const bt5 = document.getElementById('bt5')
-const bt6 = document.getElementById('bt6')
-const bt7 = document.getElementById('bt7')
-const bt8 = document.getElementById('bt8')
-const bt9 = document.getElementById('bt9')
-//faz com que todos os buttons na tabela funcionem
-const botoes = document.querySelectorAll("#geral button")    
-const jogador = document.getElementById('jogador')
-const troca = document.getElementById('troca')
-const mudar = document.getElementById('mudar')
+    <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
+ </footer>
 
-/*const combinacoes = [
-		[bt1, bt2, bt3],
-		[bt4, bt5, bt6],
-		[bt7, bt8, bt9],
-		[bt1, bt4, bt7],
-		[bt2, bt5, bt8],
-		[bt3, bt6, bt9],
-		[bt1, bt5, bt9],
-		[bt3, bt5, bt7]
-			]*/
+ <script>
+const res = document.getElementById('res')    
+const botoes = document.querySelectorAll("#corpo button")
+const ve = document.getElementById('ve') 
 
-function atualizarPagina() {
-  location.reload();
+botoes.forEach(b => {
+    b.addEventListener('click', function player() {
+    //muda o jogador
+    res.value === 'X'?  res.value = 'O'  : res.value = 'X'
+    res.value === 'X'? res.style.backgroundColor = "rgb(98, 98, 197)" : res.style.backgroundColor = "rgb(211, 109, 109)"
+    //muda de X para O
+    let gg = res.value === 'X'? b.innerHTML = 'X' : b.innerHTML = 'O' 
+    b.disabled = true
+    b.style.color = "black"
+    // Verificar se houve um vencedor
+if (
+  (botoes[0].innerHTML !== "." && botoes[0].innerHTML === botoes[1].innerHTML && botoes[0].innerHTML === botoes[2].innerHTML) ||
+  (botoes[3].innerHTML !== "." && botoes[3].innerHTML === botoes[4].innerHTML && botoes[3].innerHTML === botoes[5].innerHTML) ||
+  (botoes[6].innerHTML !== "." && botoes[6].innerHTML === botoes[7].innerHTML && botoes[6].innerHTML === botoes[8].innerHTML) ||
+  (botoes[0].innerHTML !== "." && botoes[0].innerHTML === botoes[3].innerHTML && botoes[0].innerHTML === botoes[6].innerHTML) ||
+  (botoes[1].innerHTML !== "." && botoes[1].innerHTML === botoes[4].innerHTML && botoes[1].innerHTML === botoes[7].innerHTML) ||
+  (botoes[2].innerHTML !== "." && botoes[2].innerHTML === botoes[5].innerHTML && botoes[2].innerHTML === botoes[8].innerHTML) ||
+  (botoes[0].innerHTML !== "." && botoes[0].innerHTML === botoes[4].innerHTML && botoes[0].innerHTML === botoes[8].innerHTML) ||
+  (botoes[2].innerHTML !== "." && botoes[2].innerHTML === botoes[4].innerHTML && botoes[2].innerHTML === botoes[6].innerHTML)
+) {
+  // Exibir o jogador vencedor
+  ve.innerHTML = `Jogador ${res.value} venceu!`
+
+} else if (
+  // Verificar se ocorreu um empate
+  Array.from(botoes).every((btn) => btn.innerHTML !== ".")
+) {
+  // Exibir mensagem de empate
+ve.innerHTML = 'EMPATE'
 }
 
-players.addEventListener('click',function(){
-jogador.innerHTML = 'player1'
-//o parametro dentro do forEach que possibilita o codigo funcionar
-botoes.forEach( b => {
-	b.addEventListener("click", () => {
-     if (jogador.innerHTML === 'player1') {
-        b.innerHTML = 'X'
-      jogador.innerHTML = 'player2' 
-    document.getElementById('players').style.backgroundColor = "rgb(211, 109, 109)"
-    document.getElementById('players').innerHTML = 'O'
-
-     }else{
-        b.innerHTML = 'O'
-        jogador.innerHTML = 'player1'
-    document.getElementById('players').style.backgroundColor = "rgb(98, 98, 197)"
-    document.getElementById('players').innerHTML = 'X'
-    players.disabled = true; 
-     }
-      b.style.color = "black"
-      b.disabled = true; 
-
-
-	})
+    })
+    
 })
-})
+  // Reiniciar o jogo
+function resetGame() {
+location.reload()
+}
 
-</script>
+ </script>
+</body>
 </html>
