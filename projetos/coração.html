@@ -6,17 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>coração</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+*{
+    height: auto;
+    background: fixed;
+}
+
         body{
-background:#4d0202 ;
-font-family: Arial, Helvetica, sans-serif;
+background-image: linear-gradient(to top, #1000ff82, #9e82b8 );
+font-family: 'IBM Plex Sans', sans-serif;
 text-align: center;
+
 
     }
 #nao {
 position: absolute;
-top: 300px;
+top: 315px;
 left: 51%;
-background: rgb(245, 212, 212);
+background-color: rgba(255, 255, 255, 0.432);
 border-radius: 10px;
 width: 100px;
 height: 50px;
@@ -25,10 +32,10 @@ font-size: 30px;
 }
 #sim{
     position: absolute;
-top: 300px;
+top: 315px;
 left: 51%;
 margin: 0 -120px;
-background: rgb(245, 212, 212);
+background-color: rgba(255, 255, 255, 0.432);
 border-radius: 10px;
 width: 100px;
 height: 50px;
@@ -38,7 +45,7 @@ font-size: 30px;
 
 section{
     
-background: rgb(187, 123, 123);
+background-color: rgba(255, 255, 255, 0.432);
 border-radius: 10px;
 height: 500px;
 width: 400px;
@@ -84,29 +91,33 @@ font-size: 20px;
 </head>
 <body>
        
-    <section id="caixa">
-        <h1>Quer namorar comigo?</h1>
-        <div id="tela">  </div>
-        <p id="nop"></p>
-        <button id="sim">Sim</button>
-      <button id="nao">Não</button> 
-   
-    </section> 
-    <footer style="font-size: 25px;">
-    <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
-</footer>
+        <section id="caixa">
+            <br>
+            <h1>Quer namorar comigo?</h1>
+            <div id="tela">  </div>
+            <p id="nop"></p>
+            <button id="sim">Sim</button>
+          <button id="nao">Não</button>
+        </section>
+        <footer style="font-size: 25px;">
+        <p> você pode voltar<a href="../portfolio.html" rel="prev">clicando aqui</a></p>
+        </footer>
+
 </body>
 <script>
     var nao = document.getElementById('nao')
     var sim = document.getElementById('sim')
     var nop = document.getElementById('nop')
     const tela = document.getElementById('tela')
+    let caixa = document.getElementById('caixa')
+    let lado = caixa.clientWidth
+    let altura = caixa.clientHeight
     //var nome = prompt('qual seu nome?')
    
 
     nao.addEventListener('mouseover', function() {
-    var newTop = Math.floor(Math.random() * window.innerHeight);
-    var newLeft = Math.floor(Math.random() * window.innerWidth);
+    var newTop = Math.floor(Math.random() * lado - 13);
+    var newLeft = Math.floor(Math.random() * altura - 13);
     nao.style.top = newTop + 'px';
     nao.style.left = newLeft + 'px';
    
