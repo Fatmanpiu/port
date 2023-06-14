@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NOTAS</title>
     <style>
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap');
+*{
+    height: auto;
+}
 body{
-    background-color: rgb(255, 255, 255);
-    font-family: Arial, Helvetica, sans-serif;
+    
+    background: fixed;
+    background-image: linear-gradient(to top, #1000ff82, #9e82b8 );
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 section{
-    
-    background-color: rgb(20, 20, 43);
+    margin-top: 100px;
+    background-color: rgba(255, 255, 255, 0.432);
     width: 250px;
     height: 350px;
     color: aliceblue;
@@ -20,38 +26,50 @@ section{
     margin-right:auto;
     overflow: auto;
     overflow-x: hidden;
-    border: 5px solid black;
+    border: 5px solid rgba(255, 255, 255, 0.055);;
     border-radius: 10px;
 }
 ::-webkit-scrollbar {
   width: 2px;
-  background-color: azure;
+ 
 }
 
 #eai{
     
    text-align: center;
-    color: rgb(255, 255, 255); 
+    color: rgb(0, 0, 0); 
+    margin-top: 10px;
+    margin-bottom: -290px;
     
 }
 #txt{
-    background-color: rgb(20, 20, 43);
+    background-color: rgba(255, 255, 255, 0.432);
     width: 242px;
-    color: rgb(255, 255, 255);
+    height: 30px;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    border: #9e82b8;
+    margin-top: 300px;
+   
 }
 
+
 #texto{
-    background-color: rgb(20, 20, 43);
+    background-color: rgba(255, 255, 255, 0.199);
     width: auto;
-    color: rgb(255, 255, 255);
-    border: 2px solid black;
+    color: rgb(0, 0, 0);
+    border: 2px solid rgba(0, 0, 0, 0.432);
+    margin-bottom: -13px;
 }
 button{
-    background-color:  rgb(20, 20, 43);
+    background-color: rgba(255, 255, 255, 0.432);
     width: 120px;
-    height: 20px;
-    color: aliceblue;
-   font-size: 14px;
+    height: 25px;
+    color: rgb(0, 0, 0);
+    border: #9e82b8;
+   font-size: 16px;
+   margin-top: 1px;
+   margin-left: 0.5px;
 } 
 footer{
     text-align: center; 
@@ -63,18 +81,20 @@ footer{
     </style>
 </head>
 <body>
-  <section>
-   <h1 id="eai">NOTAS</h1>
-    <input id="txt" type="text" placeholder="Escreva algo aqui...."  >
-    <br>
-    <button id="bot" onclick="enviar()">ok</button>
-    <button id="apagar">apagar</button>
- <div id="res"> 
- </div>
- </section>
- <footer>
-    <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
- </footer>
+  <main>
+      <section>
+        <h1 id="eai">NOTAS</h1>
+            <input id="txt" type="text" placeholder="Escreva algo aqui...." >
+            <button id="bot" onclick="enviar()">ok</button>
+            <button id="apagar">apagar</button>
+       <div id="res">
+        
+       </div>
+       </section>
+       <footer>
+        <p> você pode voltar<a href="../index.html" rel="prev">clicando aqui</a></p>
+       </footer>
+  </main>
  
  <!--<button id="botao">aperta aqui</button>-->
 </body>
