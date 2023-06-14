@@ -7,15 +7,21 @@
     <title>new jogo</title>
 </head>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+  *{
+    height: auto;
+    background: fixed;
+}
     body{
-        font-family: Arial, Helvetica, sans-serif;
+      background-image: linear-gradient(to top, #1000ff82, #9e82b8 );
+      font-family: 'IBM Plex Sans', sans-serif;
         
     }
  
     section{
     width: 167px;
     height: auto;
-    margin-top: 10%;    
+    margin-top: 5%;    
     margin-left: auto; 
     margin-right: auto;
     font-size: 12px;
@@ -23,9 +29,9 @@
     button{
         width: 60px; 
         height: 60px;
-        color: white;
-        background-color: white;
-        border-color: #000000;
+        color:rgba(255, 255, 255, 0);;
+        background-color: rgba(255, 255, 255, 0.432);
+        border: 2px solid rgb(0, 0, 0);
         font-size: 40px; 
         margin-bottom: 2px;
          
@@ -34,8 +40,8 @@
         width: 185px; 
         height: 50px;
         font-size: 40px; 
-        background-color: white;
-        border-color: #000000;
+        background-color: rgba(255, 255, 255, 0.432);
+        border: 2px solid rgb(0, 0, 0);
        margin-bottom: 10px;
        
     }
@@ -49,7 +55,7 @@
 
     }
     div{
-      background-color: #000000;
+     
       width: 186.7px;
       height: 184px;
     }
@@ -61,7 +67,7 @@
 <body>
 <main>
     <section id="corpo">
-        <button id="novo" onclick="resetGame()">&#x1F503;</button>
+        <button id="novo" onclick="resetGame()" style="background-color: #9e82b800;">&#x1F503;</button>
         <h1 id="ve">JOGO DA VELHA</h1>
         <input type="button" value="X" id="res">
     
@@ -95,7 +101,6 @@ botoes.forEach(b => {
     b.addEventListener('click', function player() {
     //muda o jogador
     res.value === 'X'?  res.value = 'O'  : res.value = 'X'
-    res.value === 'X'? res.style.backgroundColor = "rgb(98, 98, 197)" : res.style.backgroundColor = "rgb(211, 109, 109)"
     //muda de X para O
     let gg = res.value === 'X'? b.innerHTML = 'X' : b.innerHTML = 'O' 
     b.disabled = true
