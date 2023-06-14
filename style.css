@@ -1,11 +1,20 @@
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+*{
+    height: auto;
+  }
+h1{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 60px;
+}
 body{
     background-image: linear-gradient(to top, #1000ff82, #9e82b8 );
     font-family: Arial, Helvetica, sans-serif;
     color: rgb(0, 0, 0);
 }
-main{
-    background-color: rgba(255, 255, 255, 0.514);
+section{
+    background-color: rgba(255, 255, 255, 0.432);
     background-attachment: fixed;
     width: 500px;
     height: auto;
