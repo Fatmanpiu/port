@@ -127,6 +127,9 @@ if (
 ) {
   // Exibir o jogador vencedor
   ve.innerHTML = `Jogador ${res.value} venceu!`
+ //desabita os buttons apos um vencedor
+  for (var i = 0; i < botoes.length; i++) {
+  botoes[i].disabled = true;
 
 } else if (
   // Verificar se ocorreu um empate
