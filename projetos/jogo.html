@@ -103,9 +103,10 @@ botoes.forEach(b => {
     //muda o jogador
     res.value === 'X'?  res.value = 'O'  : res.value = 'X'
     //muda de X para O
-    let gg = res.value === 'X'? b.innerHTML = 'X' : b.innerHTML = 'O' 
+    res.value === 'X'? b.innerHTML = 'X' : b.innerHTML = 'O' 
     b.disabled = true
     b.style.color = "black"
+    IA()
   })
     
 })
@@ -127,9 +128,10 @@ if (
 ) {
   // Exibir o jogador vencedor
   ve.innerHTML = `Jogador ${res.value} venceu!`
- //desabita os buttons apos um vencedor
+  //desabita os buttons apos um vencedor
   for (var i = 0; i < botoes.length; i++) {
   botoes[i].disabled = true;
+}
 
 } else if (
   // Verificar se ocorreu um empate
@@ -140,6 +142,10 @@ ve.innerHTML = 'EMPATE'
 }
 
   
+}
+function IA() {
+let play2 = res.value
+botoes.innerHTML = play2
 }
  </script>
 </body>
