@@ -52,6 +52,7 @@
     }
     #novo{
         border: none;
+        font-size: 30px;
 
     }
     div{
@@ -66,8 +67,8 @@
 </style>
 <body>
 <main>
-    <section id="corpo">
-        <button id="novo" onclick="resetGame()" style="background-color: #9e82b800; color: #000;">&#x1F503;</button>
+    <section id="corpo" onclick="vece()">
+      <input type="button" value="&#x1F503;" id="novo" onclick="resetGame()">
         <h1 id="ve">JOGO DA VELHA</h1>
         <input type="button" value="X" id="res">
     
@@ -105,7 +106,15 @@ botoes.forEach(b => {
     let gg = res.value === 'X'? b.innerHTML = 'X' : b.innerHTML = 'O' 
     b.disabled = true
     b.style.color = "black"
-    // Verificar se houve um vencedor
+  })
+    
+})
+  // Reiniciar o jogo
+function resetGame() {
+location.reload()
+}
+function vece() {
+      // Verificar se houve um vencedor
 if (
   (botoes[0].innerHTML !== "." && botoes[0].innerHTML === botoes[1].innerHTML && botoes[0].innerHTML === botoes[2].innerHTML) ||
   (botoes[3].innerHTML !== "." && botoes[3].innerHTML === botoes[4].innerHTML && botoes[3].innerHTML === botoes[5].innerHTML) ||
@@ -127,14 +136,8 @@ if (
 ve.innerHTML = 'EMPATE'
 }
 
-    })
-    
-})
-  // Reiniciar o jogo
-function resetGame() {
-location.reload()
+  
 }
-
  </script>
 </body>
 </html>
